@@ -41,13 +41,17 @@ info.update = function (props) {
         'Municipio ' + props.MUNI + '<br />' +  '<br />' + 
 
         '<b>Salud</b>' + '<br />' +
-        'Proximidad centros de salud: ' + props.DxP_SALUD.toFixed(0) + ' m' + '<br />' + '<br />' +   
+        'Proximidad centros de salud: ' + props.DxP_SALUD.toFixed(0) + ' m' + '<br />' +
+        'Concentración de Pm10: ' + props.PM10.toFixed(0) + ' µg/m3' +  '<br />' + '<br />' +    
         
         '<b>Educación, cultura y diversidad </b>' + '<br />' +
-        'Proximidad equipamientos educativos: ' + props.DxP_EDUCA.toFixed(0) + ' m' + '<br />' +  '<br />' +  
+        'Proximidad equipamientos educativos: ' + props.DxP_EDUCA.toFixed(0) + ' m' + '<br />' +   '<br />' + 
         
         '<b>Espacios públicos, seguridad y recreación </b>' + '<br />' +
-        'Proximidad espacio público: ' + props.DxP_EP.toFixed(0) + ' m' : 'Seleccione una manzana');
+        'Proximidad espacio público: ' + props.DxP_EP.toFixed(0) + ' m'+ '<br />' +   '<br />' + 
+
+        '<b>Oportunidades económicas </b>' + '<br />' +
+        'Proximidad unidades de servicios y comerciales: ' + props.DxP_CENTR.toFixed(0) + ' m'  : 'Seleccione una manzana');
 };
 info.addTo(map);
 
@@ -144,7 +148,7 @@ var legends = {
         elem5: '<div><span  style= "color:#d7191c">▉</span>2001 - 4030</div>',
         elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
-        elem8: " ",
+        elem8: "Google Maps",
     },
     DxP_EDUCA: {
         title: "Proximidad equipamientos de educación",
@@ -156,7 +160,7 @@ var legends = {
         elem5: '<div><span  style= "color:#d7191c">▉</span>2001 - 5132</div>',
         elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
-        elem8: " ",
+        elem8: "Google Maps",
     },
     DxP_EP: {
         title: "Proximidad espacio público",
@@ -168,12 +172,36 @@ var legends = {
         elem5: '<div><span  style= "color:#d7191c">▉</span>10001 - 16039</div>',
         elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
-        elem8: " ",
+        elem8: "Google Maps",
+    },
+    PM10: {
+        title: "Concentración Pm10",
+        subtitle: "µg/m3",
+        elem1: '<div><span  style= "color:#1a9641">▉</span>55 - 57</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>58 - 60</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>61 - 63</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>64 - 66</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>67 - 69</div>',
+        elem6: ' ',
+        elem7: ' ',
+        elem8: "Ministerio de Ambiente y Recursos Naturales",
+    },
+    DxP_CENTR: {
+        title: "Proximidad unidades de servicio y comerciales",
+        subtitle: "Distancia en m x Factor inclinación del terreno", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 500</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>501 - 1500</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>1501 - 3000</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>3001 - 7500</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>7501 - 11535</div>',
+        elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
+        elem7: '',
+        elem8: "Google Maps",
     },
 }
 
 var indi = L.geoJson(Manzana, {
-    style: legends.D_POB,
+    style: legends.DxP_SALUD,
 }).addTo(map);
 
 var currentStyle = 'DxP_SALUD';
@@ -205,11 +233,19 @@ function setProColor(d) {
                     d > 500 ? '#a6d96a' :
                     '#1a9641';
     }
+    else if (currentStyle === 'DxP_CENTR') {
+        return d > 7500 ? '#d7191c' :
+            d > 3000 ? '#fdae61' :
+                d > 1500 ? '#f4f466' :
+                    d > 500 ? '#a6d96a' :
+                    '#1a9641';
+    }
     else {
-        return d > 3 ? '#1a9641' :
-                d > 2 ? '#f4f466' :
-                    d > 1 ? '#a6d96a' :
-                        '#1a9641';
+        return d > 66 ? '#d7191c' :
+            d > 62.5 ? '#fdae61' :
+                d > 59.5 ? '#f4f466' :
+                    d > 57 ? '#a6d96a' :
+                    '#1a9641';
     }
 
 }
