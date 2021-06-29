@@ -140,26 +140,39 @@
         <b>Seleccione indicador:</b>
         <div class="custom-select">
         <select name="layers" onclick= 'changeIndi(this);'>
+            <optgroup label="Vivienda"></optgroup>
+            <option id="MAT_PARED" value="MAT_PARED">Vivienda adecuada (material de paredes)</option>
+            <option id="IND_10" value="IND_10">Hacinamiento extremo</option>
+            <option id="IND_8" value="IND_8">Acceso a agua mejorada</option>
+            <option id="IND_11" value="IND_11">Acceso a saneamiento</option>   
+            <option id="IND_13" value="IND_13">Acceso a electricidad</option> 
+            <option id="IND_19" value="IND_19">Acceso a internet</option>
+            </optgroup>
             <optgroup label="Salud"></optgroup>
-            <option id="DxP_SALUD" value="DxP_SALUD">Proximidad centros salud</option>
+            <option id="DxP_SALUD" value="DxP_SALUD">Proximidad equipamientos salud</option>
             <option id="PM10" value="PM10">Concentración de Pm10</option>
+            <option id="CON_SOL" value="CON_SOL">Contaminación de residuos sólidos</option>
             </optgroup>
             <optgroup label="Educación, cultura y diversidad"></optgroup>
             <option id="DxP_EDUCA" value="DxP_EDUCA">Proximidad equipamientos educativos</option>
             </optgroup>
             <optgroup label="Espacios públicos, seguridad, recreación"></optgroup>
             <option id="DxP_EP" value="DxP_EP">Proximidad espacio público</option>  
+            <option id="M2_EP_CA" value="M2_EP_CA">M² per capita de espacio público</option> 
+            <option id="IND_14" value="IND_14" selected>Densidad residencial</option>
+            <option id="IND_26" value="IND_26">Tasa de hurtos</option>
+            <option id="IND_25" value="IND_25">Tasa de homicidios</option>
+            <option id="IND_30" value="IND_30">Diversidad usos del suelo</option>
+            </optgroup>
             <optgroup label="Oportunidades económicas"></optgroup>
-            <option id="DxP_CENTR" value="DxP_CENTR">Proximidad unidades de servicios y comerciales</option> 
+            <option id="DxP_CENTR" value="DxP_CENTR">Proximidad zonas de interés económico (servicios y comercio)</option>
+            <option id="IND_2" value="IND_2">Tasa de desempleo</option>
+            <option id="IND_3" value="IND_3">Tasa de empleo informal</option>
             </optgroup>          
         </select>
     </div>
     </div>
 
-    <div id="logoContainer">
-        <img src="images/logo1.png" width="100%">
-    </div>
-    
     <div id="logoContainer">
         <img src="images/logo1.png" width="100%">
     </div>
