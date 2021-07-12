@@ -373,7 +373,7 @@ var legends = {
     },
     IND_30: {
         title: "Diversidad usos del suelo",
-        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
+        subtitle: "Índice de Shannon-Wienner -  Nivel de diversidad por manzana",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0.141 - 0.280</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.131 - 0.140</div>',
         elem3: '<div><span  style= "color:#f4f466">▉</span>0.041 - 0.130</div>',
