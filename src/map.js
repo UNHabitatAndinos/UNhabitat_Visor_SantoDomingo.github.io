@@ -210,7 +210,7 @@ var legends = {
         elem2: '<div><span  style= "color:#a6d96a">▉</span>501 - 1500</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>1501 - 3000</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>3001 - 7500</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>7501 - 11535</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>7501 - 11605</div>',
         elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Google Maps",
