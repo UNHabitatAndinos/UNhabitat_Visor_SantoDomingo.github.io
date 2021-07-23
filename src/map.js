@@ -41,7 +41,7 @@ info.update = function (props) {
         'Municipio ' + props.MUNI + '<br />' +  '<br />' + 
 
         '<b>Vivienda </b>' + '<br />' +
-        'Vivienda adecuada (material de paredes): ' + props.MAT_PARED.toFixed(0) + ' %' + '<br />' +
+        'Vivienda adecuada (material de paredes): ' + props.IND_6.toFixed(0) + ' %' + '<br />' +
         'Hacinamiento extremo: ' + props.IND_10.toFixed(0) + ' %' + '<br />' +
         'Agua mejorada: ' + props.IND_8.toFixed(0) + ' %' + '<br />' +
         'Saneamiento: ' + props.IND_11.toFixed(0) + ' %' + '<br />' +
@@ -50,7 +50,7 @@ info.update = function (props) {
 
         '<b>Salud</b>' + '<br />' +
         'Proximidad equipamientos de salud: ' + props.DxP_SALUD.toFixed(0) + ' m' + '<br />' +
-        'Concentración de Pm10: ' + props.PM10.toFixed(2) + ' µg/m3' +  '<br />' +   
+        //'Concentración de Pm10: ' + props.PM10.toFixed(2) + ' µg/m3' +  '<br />' +   
         'Contaminación residuos sólidos: ' + props.CON_SOL.toFixed(0) + ' %' + '<br />' +  '<br />' +   
 
         '<b>Educación, cultura y diversidad </b>' + '<br />' +
@@ -58,7 +58,7 @@ info.update = function (props) {
 
         '<b>Espacios públicos, seguridad y recreación </b>' + '<br />' +
         'Proximidad espacio público: ' + props.DxP_EP.toFixed(0) + ' m' + '<br />' +
-        'M² per capita de espacio público: ' + props.M2_EP_CA.toFixed(2) + '<br />' +
+        //'M² per capita de espacio público: ' + props.M2_EP_CA.toFixed(2) + '<br />' +
         'Densidad poblacional: ' + props.IND_14.toFixed(2) + '<br />' +
         'Tasa de hurtos x 100mil habitantes: ' + props.IND_26.toFixed(1) + '<br />' +
         'Tasa de homicidios x 100mil habitantes: ' + props.IND_25.toFixed(1) + '<br />' +
@@ -215,7 +215,7 @@ var legends = {
         elem7: '',
         elem8: "Google Maps",
     },
-    MAT_PARED: {
+    IND_6: {
         title: "Vivienda con material de paredes adecuado",
         subtitle: "% de Viviendas", 
         elem1: '<div><span  style= "color:#1a9641">▉</span>98.7 - 99.9</div>',
@@ -373,7 +373,7 @@ var legends = {
     },
     IND_30: {
         title: "Diversidad usos del suelo",
-        subtitle: "Índice de Shannon-Wienner -  Nivel de diversidad por manzana",
+        subtitle: "Índice de Shannon-Wienner -  Nivel de diversidad por grilla",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0.141 - 0.280</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.131 - 0.140</div>',
         elem3: '<div><span  style= "color:#f4f466">▉</span>0.041 - 0.130</div>',
@@ -425,7 +425,7 @@ function setProColor(d) {
                     d > 500 ? '#a6d96a' :
                     '#1a9641';
     }
-    else if (currentStyle === 'MAT_PARED') {
+    else if (currentStyle === 'IND_6') {
         return d > 98.6 ? '#1a9641' :
             d > 97.2 ? '#a6d96a' :
                 d > 97 ? '#f4f466' :
