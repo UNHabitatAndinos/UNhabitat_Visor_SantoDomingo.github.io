@@ -41,7 +41,7 @@ info.update = function (props) {
         'Municipio ' + props.MUNI + '<br />' +  '<br />' + 
 
         '<b>Vivienda </b>' + '<br />' +
-        'Vivienda adecuada (material de paredes): ' + props.IND_6.toFixed(0) + ' %' + '<br />' +
+        'Vivienda adecuada (material de paredes): ' + props.MAT_ADE_PA.toFixed(0) + ' %' + '<br />' +
         'Hacinamiento extremo: ' + props.IND_10.toFixed(0) + ' %' + '<br />' +
         'Agua mejorada: ' + props.IND_8.toFixed(0) + ' %' + '<br />' +
         'Saneamiento: ' + props.IND_11.toFixed(0) + ' %' + '<br />' +
@@ -228,7 +228,7 @@ var legends = {
         elem7: '',
         elem8: "Google Maps",
     },
-    IND_6: {
+    MAT_ADE_PA: {
         title: "Vivienda con material de paredes adecuado",
         subtitle: "% de Viviendas", 
         elem1: '<div><span  style= "color:#1a9641">▉</span>98.7 - 99.9</div>',
@@ -445,7 +445,7 @@ function setProColor(d) {
                     d > 500 ? '#a6d96a' :
                     '#1a9641';
     }
-    else if (currentStyle === 'IND_6') {
+    else if (currentStyle === 'MAT_ADE_PA') {
         return d > 98.6 ? '#1a9641' :
             d > 97.2 ? '#a6d96a' :
                 d > 97 ? '#f4f466' :
