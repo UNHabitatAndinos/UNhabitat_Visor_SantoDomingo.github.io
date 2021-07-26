@@ -50,22 +50,23 @@ info.update = function (props) {
 
         '<b>Salud</b>' + '<br />' +
         'Proximidad equipamientos de salud: ' + props.DxP_SALUD.toFixed(0) + ' m' + '<br />' +
-        //'Concentración de Pm10: ' + props.PM10.toFixed(2) + ' µg/m3' +  '<br />' +   
+        'Concentración de Pm10: ' + props.PM10.toFixed(2) + ' µg/m3' +  '<br />' +   
         'Contaminación residuos sólidos: ' + props.CON_SOL.toFixed(0) + ' %' + '<br />' +  '<br />' +   
 
         '<b>Educación, cultura y diversidad </b>' + '<br />' +
+        'Proximidad equipamientos culturales: ' + props.DxP_BIBLI.toFixed(0) + ' m' + '<br />' + 
         'Proximidad equipamientos educativos: ' + props.DxP_EDUCA.toFixed(0) + ' m' + '<br />' +  '<br />' +  
 
         '<b>Espacios públicos, seguridad y recreación </b>' + '<br />' +
         'Proximidad espacio público: ' + props.DxP_EP.toFixed(0) + ' m' + '<br />' +
-        //'M² per capita de espacio público: ' + props.M2_EP_CA.toFixed(2) + '<br />' +
+        'M² per capita de espacio público: ' + props.M2_EP_PU.toFixed(2) + '<br />' +
         'Densidad poblacional: ' + props.IND_14.toFixed(2) + '<br />' +
         'Tasa de hurtos x 100mil habitantes: ' + props.IND_26.toFixed(1) + '<br />' +
         'Tasa de homicidios x 100mil habitantes: ' + props.IND_25.toFixed(1) + '<br />' +
         'Diversidad usos del suelo: ' + props.IND_30.toFixed(3) + '/1.61' +'<br />' + '<br />' +
 
         '<b>Oportunidades económicas </b>' + '<br />' +
-        'Proximidad unidades servicios y comerciales: ' + props.DxP_CENTR.toFixed(0) + ' m' + '<br />' +
+        'Proximidad zonas de interés económico (servicios y comercio): ' + props.DxP_CENTR.toFixed(0) + ' m' + '<br />' +
         'Tasa de desempleo: ' + props.IND_2.toFixed(2) + ' %' + '<br />' +
         'Empleo informal estricto: ' + props.IND_3.toFixed(2) + ' %' : 'Seleccione una manzana');
 };
@@ -158,11 +159,11 @@ var legends = {
     DxP_SALUD: {
         title: "Proximidad equipamientos de salud",
         subtitle: "Distancia en metros con factor de inclinación del terreno", 
-        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 300</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>301 - 500</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>501 - 1000</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>1001 - 2000</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>2001 - 4030</div>',
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 500</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>501 - 1000</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>1001 - 2000</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>2001 - 5000</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>5001 - 16174</div>',
         elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Google Maps",
@@ -170,11 +171,11 @@ var legends = {
     DxP_EDUCA: {
         title: "Proximidad equipamientos de educación",
         subtitle: "Distancia en metros con factor de inclinación del terreno", 
-        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 300</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>301 - 500</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>501 - 1000</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>1001 - 2000</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>2001 - 5132</div>',
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 500</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>501 - 1000</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>1001 - 2000</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>2001 - 5000</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>5001 - 9154</div>',
         elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Google Maps",
@@ -186,7 +187,7 @@ var legends = {
         elem2: '<div><span  style= "color:#a6d96a">▉</span>501 - 1000</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>1001 - 5000</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>5001 - 10000</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>10001 - 16039</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>10001 - 14912</div>',
         elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Google Maps",
@@ -198,7 +199,7 @@ var legends = {
         elem2: '<div><span  style= "color:#a6d96a">▉</span>58 - 60</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>61 - 63</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>64 - 66</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>67 - 69</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>67 - 68</div>',
         elem6: ' ',
         elem7: ' ',
         elem8: "Ministerio de Ambiente y Recursos Naturales",
@@ -207,10 +208,22 @@ var legends = {
         title: "Proximidad zonas de interés económico (servicios y comercio)",
         subtitle: "Distancia en metros con factor de inclinación del terreno", 
         elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 500</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>501 - 1500</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>1501 - 3000</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>3001 - 7500</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>7501 - 11605</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>501 - 2000</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>2001 - 5000</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>5001 - 10000</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>10001 - 21197</div>',
+        elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
+        elem7: '',
+        elem8: "Google Maps",
+    },
+    DxP_BIBLI: {
+        title: "Proximidad equipamientos culturales",
+        subtitle: "Distancia en metros con factor de inclinación del terreno", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 500</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>501 - 5000</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>5001 - 10000</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>10001 - 20000</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>20001 - 36990</div>',
         elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Google Maps",
@@ -399,18 +412,25 @@ manzanas = L.geoJson(Manzana, {
 
 function setProColor(d) {
     if (currentStyle === 'DxP_SALUD') {
-        return d > 2000 ? '#d7191c' :
-            d > 1000 ? '#fdae61' :
-                d > 500 ? '#f4f466' :
-                    d > 300 ? '#a6d96a' :
+        return d > 5000 ? '#d7191c' :
+            d > 2000 ? '#fdae61' :
+                d > 1000 ? '#f4f466' :
+                    d > 500 ? '#a6d96a' :
                     '#1a9641';
     }else if (currentStyle === 'DxP_EDUCA') {
-        return d > 2000 ? '#d7191c' :
-            d > 1000 ? '#fdae61' :
-                d > 500 ? '#f4f466' :
-                    d > 300 ? '#a6d96a' :
+        return d > 5000 ? '#d7191c' :
+            d > 2000 ? '#fdae61' :
+                d > 1000 ? '#f4f466' :
+                    d > 500 ? '#a6d96a' :
                     '#1a9641';
     } 
+    else if (currentStyle === 'DxP_BIBLI') {
+        return d > 20000 ? '#d7191c' :
+            d > 10000 ? '#fdae61' :
+                d > 5000 ? '#f4f466' :
+                    d > 500 ? '#a6d96a' :
+                    '#1a9641';
+    }
     else if (currentStyle === 'DxP_EP') {
         return d > 5000 ? '#d7191c' :
             d > 2000 ? '#fdae61' :
@@ -419,9 +439,9 @@ function setProColor(d) {
                     '#1a9641';
     }
     else if (currentStyle === 'DxP_CENTR') {
-        return d > 7500 ? '#d7191c' :
-            d > 3000 ? '#fdae61' :
-                d > 1500 ? '#f4f466' :
+        return d > 10000 ? '#d7191c' :
+            d > 5000 ? '#fdae61' :
+                d > 2000 ? '#f4f466' :
                     d > 500 ? '#a6d96a' :
                     '#1a9641';
     }
